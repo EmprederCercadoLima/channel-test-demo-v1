@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+
+    <Match>
+        <Package name="~pe\.com\.niubiz\**.*"/>
+        <Bug pattern="IMC_IMMATURE_CLASS_NO_TOSTRING, SPRING_ENDPOINT, SPRING_CSRF_PROTECTION_DISABLED"/>
+    </Match>
+    
+    <Match>
+        <Package name="~pe\.com\.niubiz\.services\.channel\.demo\.util\**.*"/>
+        <Bug pattern="SSCU_SUSPICIOUS_SHADED_CLASS_USE"/>
+    </Match>
+
+    <!-- External API - MapStruct -->
+    <Match>
+        <Class name="~pe\.com\.niubiz\.services\.channel\.demo\.business\.ServiceMapperImpl*"/>
+        <Bug pattern="AI_ANNOTATION_ISSUES_NEEDS_NULLABLE, USBR_UNNECESSARY_STORE_BEFORE_RETURN,
+          NP_BOOLEAN_RETURN_NULL,TBP_TRISTATE_BOOLEAN_PATTERN, CE_CLASS_ENVY" />
+    </Match>
+
+    <!-- External API - swagger-codegen-maven-plugin -->
+    <Match>
+        <Package name="~pe\.com\.niubiz\.services\.support\.demo\**.*"/>
+        <Bug pattern="UCPM_USE_CHARACTER_PARAMETERIZED_METHOD, AI_ANNOTATION_ISSUES_NEEDS_NULLABLE, UPM_UNCALLED_PRIVATE_METHOD,EI_EXPOSE_REP2,EI_EXPOSE_REP" />
+    </Match>
+
+</FindBugsFilter>

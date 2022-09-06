@@ -1,0 +1,39 @@
+server.port: 8082
+application:
+  errors:
+    EXTERNAL_API:
+      code: "DEMO-00101"
+      message: "Error en llamado a API Externa"
+    EXTERNAL_API_ERROR:
+      code: "DEMO-00102"
+      message: "Custom Error en llamado a API Externa"
+    BAD_REQUEST_EXCEPTION:
+      code: "DEMO-00103"
+      message: "General Bad Request"
+    SERVER_ERROR_EXCEPTION:
+      code: "DEMO-00104"
+      message: "General Exception"
+    SERVER_ERROR_THROWABLE:
+      code: "DEMO-00105"
+      message: "General Throwable Exception"
+    UNAUTHORIZED_EXCEPTION:
+      code: "DEMO-00106"
+      message: "No authorizado"
+    FORBIDDEN_EXCEPTION:
+      code: "DEMO-00107"
+      message: "Recurso prohibido"
+    ILLEGAL_CREATION:
+      code: "DEMO-00108"
+      message: "Creacion ilegal"
+    INVALID_SWAGGER_NOTE:
+      code: "DEMO-00109"
+      message: "Archivo swagger note invalido"       
+  demo:
+    dummy: 'dummy'
+  support-demo-v1:
+    http-client:
+      base-url: http://localhost:8080
+#      base-url: http://support-niubiz-demo-v1/
+      connect-timeout: 30
+      read-timeout: 30
+      write-timeout: 30

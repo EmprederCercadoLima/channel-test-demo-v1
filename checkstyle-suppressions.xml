@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "http://checkstyle.sourceforge.net/dtds/suppressions_1_1.dtd">
+<suppressions>
+    <suppress checks="JavadocMethod"
+              files="pe[\\/]com[\\/]"/>
+    <suppress checks="JavadocType"
+              files="pe[\\/]com[\\/]"/>
+    <suppress checks="." files="[\\/]test[\\/]"/>
+    <!-- External API - MapStruct -->
+	<suppress checks="."
+		files="pe[\\/]com[\\/]niubiz[\\/]services[\\/]channel[\\/]demo[\\/]business[\\/]ServiceMapperImpl.java" />
+    
+    <!-- External API - Support Demo -->
+	<suppress checks="."
+		files="pe[\\/]com[\\/]niubiz[\\/]services[\\/]support[\\/]demo[\\/]" />
+</suppressions>

@@ -1,0 +1,104 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API Application for demo.",
+    "version": "1.0.0",
+    "title": "API Support demo V1"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "demo-controller",
+      "description": "Demo Controller"
+    }
+  ],
+  "paths": {
+    "/support/niubiz/v1.0/demo/parameters": {
+      "get": {
+        "tags": [
+          "Parameter"
+        ],
+        "summary": "Listado de Parametros",
+        "operationId": "getParametersByTypeUsingGET",
+        "produces": [
+          "application/json",
+          "application/stream+json"
+        ],
+        "parameters": [
+          {
+            "name": "typeId",
+            "in": "query",
+            "description": "Código del Tipo de parametro",
+            "required": true,
+            "type": "string",
+            "pattern": "^[A-Z]{2}$",
+            "x-example": "DT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Proceso Satisfactorio.",
+            "schema": {
+              "$ref": "#/definitions/ParameterResponse"
+            }
+          },
+          "400": {
+            "description": "El cliente envi&oacute; datos incorrectos."
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Error en el proceso."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Observable«ParameterResponse»": {
+      "type": "object",
+      "title": "Observable«ParameterResponse»"
+    },
+    "ParameterResponse": {
+      "type": "object",
+      "properties": {
+        "creationTime": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2022-03-10T05:00:00.000+00:00",
+          "description": "fecha de creacion del parametro"
+        },
+        "enabled": {
+          "type": "boolean",
+          "example": true,
+          "description": "estado del parametro"
+        },
+        "ordered": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "orden del parametro"
+        },
+        "parameterId": {
+          "type": "string",
+          "example": "PT01",
+          "description": "Código de Parámetro"
+        },
+        "value": {
+          "type": "string",
+          "example": "TEST PARAMETER",
+          "description": "Valor del parametro"
+        }
+      },
+      "title": "ParameterResponse"
+    }
+  }
+}
